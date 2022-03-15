@@ -1,0 +1,18 @@
+import axiosInstance from ".";
+
+export interface MakeChatRoomRequest {
+    opponentId: string
+}
+
+export function fetchChatRoomList(){
+    return axiosInstance.get(`/room`)
+
+}
+
+export function fetchChatRoomDetail(roomId: string){
+    return axiosInstance.post(`/room/${roomId}`)
+}
+
+export function makeChatRoom(body: MakeChatRoomRequest){
+    return axiosInstance.post('/room',body)
+}
